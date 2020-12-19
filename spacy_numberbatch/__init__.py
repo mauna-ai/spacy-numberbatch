@@ -1,1 +1,3 @@
-__version__ = '0.1.0'
+# __init__.py
+
+from .version import __version__

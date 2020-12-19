@@ -10,6 +10,7 @@ spacy = "^2.3.5"
 transformers = "^4.0.1"
 gensim = "^3.8.3"
 ipython = "^7.19.0"
+wordfreq = "^2.3.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -17,3 +18,12 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+build = "spacy_numberbatch.build:build"
+
+download_spacy_models = "spacy_numberbatch.build:download_spacy_models"
+init_vector_models    = "spacy_numberbatch.build:init_vector_models"
+patch_spacy_models    = "spacy_numberbatch.build:patch_spacy_models"
+package_all_models    = "spacy_numberbatch.build:package_all_models"
+create_tarballs       = "spacy_numberbatch.build:create_tarballs"

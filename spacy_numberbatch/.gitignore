@@ -1,0 +1,3 @@
+# Generated models
+models/*
+!models/__init__.py
