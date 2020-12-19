@@ -104,3 +104,12 @@ def build():
     patch_spacy_models()
     package_all_models()
     create_tarballs()
+
+def gh_publish():
+
+    os.system(
+        "for v in 0 1; do "
+            "for m in models/*$v.0.tar.gz; do "
+                "gh release upload 0.$v.0 $m; "
+            "done; "
+        "done;" )

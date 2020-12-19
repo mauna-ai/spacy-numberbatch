@@ -21,6 +21,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 build = "spacy_numberbatch.build:build"
+gh_publish = "spacy_numberbatch.build:gh_publish"
 
 download_spacy_models = "spacy_numberbatch.build:download_spacy_models"
 init_vector_models    = "spacy_numberbatch.build:init_vector_models"
