@@ -222,6 +222,20 @@ python-versions = ">=3.5"
 marisa-trie = "*"
 
 [[package]]
+name = "lazy-import"
+version = "0.2.2"
+description = "A module for lazy loading of Python modules"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+
+[package.extras]
+test = ["pytest", "pytest-xdist"]
+
+[[package]]
 name = "marisa-trie"
 version = "0.7.5"
 description = "Static memory-efficient and fast Trie-like structures for Python."
@@ -675,7 +689,7 @@ mecab = ["mecab-python3"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d19316a9f8d68b575095871cc280cbeeff62fa19812b50ce66e4e642c5a22f09"
+content-hash = "e1b324523cd0616f3806c9391645a94914d960b41e0980a82adfb4aa83d18c21"
 
 [metadata.files]
 appnope = [
@@ -838,6 +852,9 @@ joblib = [
 ]
 langcodes = [
     {file = "langcodes-2.1.0.tar.gz", hash = "sha256:75bcaca8825e1a321965b136815dee53083c63314975e024ad0ccff8545e681f"},
+]
+lazy-import = [
+    {file = "lazy_import-0.2.2.tar.gz", hash = "sha256:2149aef8579459407c62cfeccf118527939c9931ace124f355236360644f8a3d"},
 ]
 marisa-trie = [
     {file = "marisa-trie-0.7.5.tar.gz", hash = "sha256:c73bc25d868e8c4ea7aa7f1e19892db07bba2463351269b05340ccfa06eb2baf"},
