@@ -53,7 +53,6 @@ def patch_spacy_models(sizes=('sm', 'md', 'lg')):
 
         nlp.meta["name"] = f"{new_type}_{size}"
         nlp.meta["version"] = __version__
-        nlp.meta["parent_package"] = "spacy_numberbatch"
 
         nlp.meta["description"] = ""
         nlp.meta["author"] = ""
@@ -84,7 +83,6 @@ def create_tarballs(sizes=('sm', 'md', 'lg')):
     """ Package all models into tarballs. """
 
     types = ["core", "vectors"]
-    command = "tar -czf"
 
     for path in [
         f"./models/en_{type_}_numberbatch_{size}-"
@@ -93,8 +91,9 @@ def create_tarballs(sizes=('sm', 'md', 'lg')):
         for type_ in types
         for size in sizes ]:
 
+        command = f"tar -C {path} -czf"
         os.system(
-            f"{command} {path}.tar.gz {path}" )
+            f"{command} {path}.tar.gz ." )
 
 def build():
     """ Run all build steps. """
