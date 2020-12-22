@@ -1,0 +1,6 @@
+[submodule "submodules/conceptnet-numberbatch"]
+	path = submodules/conceptnet-numberbatch
+	url = https://github.com/commonsense/conceptnet-numberbatch
+[submodule "submodules/KagNet"]
+	path = submodules/KagNet
+	url = https://github.com/INK-USC/KagNet

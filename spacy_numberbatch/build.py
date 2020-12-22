@@ -46,7 +46,8 @@ def patch_spacy_models(sizes=('sm', 'md', 'lg')):
     models = {}
 
     for size in sizes:
-        nlp = spacy.load(f"en_core_web_{size}")
+        # Only sm models can have their vocab replaced
+        nlp = spacy.load(f"en_core_web_sm")
         nlp_vec = spacy.load(f"./models/en_{vec_prefix}_{size}")
 
         nlp.vocab.vectors = nlp_vec.vocab.vectors
@@ -109,6 +110,6 @@ def gh_publish():
     os.system(
         "for v in 0 1; do "
             "for m in models/*$v.0.tar.gz; do "
-                "gh release upload 0.$v.0 $m; "
+                "gh release upload 0.$v.0 $m & \n"
             "done; "
-        "done;" )
+        "done; wait;" )
